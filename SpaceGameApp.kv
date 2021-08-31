@@ -1,0 +1,71 @@
+<Ship>:
+    size: 30, 20
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: 10,10 
+        Rectangle:
+            pos: [self.pos[0]+10,self.pos[1]]
+            size: 10,10 
+        Rectangle:
+            pos: [self.pos[0]+20,self.pos[1]]
+            size: 10,10
+        Rectangle:
+            pos: [self.pos[0]+10,self.pos[1]+10]
+            size: 10,10
+
+<Bullet>:
+    size: 10,10
+    canvas:
+        Color:
+            rgb: (100,34,53)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Square>:
+    pos:  0,0
+    size: 10,10
+    canvas:
+        Color:
+            rgba: self.red,self.green,self.blue,self.alpha
+        Rectangle:
+            pos: self.pos
+            size: 10,10
+
+<Enemy>:
+    size: 50,50
+    Square:
+        id: s_a 
+        pos: self.parent.center_x,self.parent.center_y-20
+    Square:
+        id: s_b
+        pos: self.parent.center_x-10, self.parent.center_y-10
+    Square:
+        id: s_c
+        pos: self.parent.center_x+10,self.parent.center_y-10
+    Square:
+        id: s_d 
+        pos: self.parent.center_x,self.parent.center_y
+    Square:
+        id: s_e
+        pos: self.parent.center_x-20, self.parent.center_y
+    Square:
+        id: s_f
+        pos: self.parent.center_x+20,self.parent.center_y
+    Square:
+        id: s_g 
+        pos: self.parent.center_x,self.parent.center_y+20
+    Square:
+        id: s_h
+        pos: self.parent.center_x-10, self.parent.center_y+10
+    Square:
+        id: s_i
+        pos: self.parent.center_x+10,self.parent.center_y+10
+
+<SpaceGame>:
+    myship   : ship_id
+
+    Ship:
+        id: ship_id
+        center: self.parent.center_x, 100
